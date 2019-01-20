@@ -10,17 +10,25 @@ namespace TicTacToe.Controllers
     {
         List<string> selectedBoxes = new List<string>();
 
-        List<string> topRow = new List<string>(new string[] { "A1", "B1", "C1" });
-        List<string> middleRow = new List<string>(new string[] { "A2", "B2", "C2" });
-        List<string> bottomRow = new List<string>(new string[] { "A3", "B3", "C3" });
-        List<string> leftColumn = new List<string>(new string[] { "A1", "A2", "A3" });
-        List<string> middleColumn = new List<string>(new string[] { "B1", "B2", "B3" });
-        List<string> rightColumn = new List<string>(new string[] { "C1", "C2", "C3" });
-        List<string> leftToRigtDiagonal = new List<string>(new string[] { "A1", "B2", "C3" });
-        List<string> rigthToLeftDiagonal = new List<string>(new string[] { "A3", "B2", "C1" });
+        List<List<string>> rowsAndColumns = new List<List<string>>();
 
-        public ActionResult Index()
+
+        List<string> topRow = new List<string>{"A1", "B1", "C1" };
+        List<string> middleRow = new List<string>{ "A2", "B2", "C2" };
+        List<string> bottomRow = new List<string>{ "A3", "B3", "C3" };
+        List<string> leftColumn = new List<string>{"A1", "A2", "A3" };
+        List<string> middleColumn = new List<string>{ "B1", "B2", "B3" };
+        List<string> rightColumn = new List<string>{ "C1", "C2", "C3" };
+        List<string> leftToRigtDiagonal = new List<string>{ "A1", "B2", "C3" };
+        List<string> rigthToLeftDiagonal = new List<string>{ "A3", "B2", "C1" };
+
+        public ActionResult Index(bool newGame, string selectedBox)
         {
+            selectedBoxes.Add(selectedBox);
+
+            if (newGame)
+                selectedBoxes.Clear();
+
             return View();
         }
 
