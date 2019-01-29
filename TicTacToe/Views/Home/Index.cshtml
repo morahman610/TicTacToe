@@ -1,18 +1,7 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-<form onsubmit="Home/TakeInput/">
-    <select name="box">
-        <option value="A1"></option>
-        <option value="A2"></option>
-        <option value="A3"></option>
-        <option value="B1"></option>
-        <option value="B2"></option>
-        <option value="B3"></option>
-        <option value="C1"></option>
-        <option value="C2"></option>
-        <option value="C3"></option>
-    </select>
-    <button type="submit" />
+﻿<form action="/Home/Index" id="selectedBox" method="post">
+    <input type="radio" name="selectedBox" value="A2" />A2<br />
+    <input type="radio" name="selectedBox" value="A3"/>A3<br />
+    <button type="submit"  />
 </form>
+
+@ViewBag.A2
